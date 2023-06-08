@@ -9,7 +9,7 @@ spec:
     name: podinfo
   policy:
     semver:
-      range: 5.0.0
+      range: 5.0.2
 
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
@@ -22,4 +22,4 @@ spec:
     name: podinfo
   policy:
     semver:
-      range: 5.0.3
+      range: 5.0.1
