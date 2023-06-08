@@ -35,7 +35,7 @@ spec:
   template:
     metadata:
       labels:
-        app: podinfo
+        app: podinfo2
     spec:
       containers:
         - name: podinfod
