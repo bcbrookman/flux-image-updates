@@ -22,6 +22,6 @@ jobs:
 
       - name: pull-request
         run: |
-          gh pr create --base "main" --title "" --body ""
+          gh pr create --base "main" --fill
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
