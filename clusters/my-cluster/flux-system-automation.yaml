@@ -39,7 +39,25 @@ spec:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
-      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+        messageTemplate: |
+          Update podinfo2 image version
+
+          Automation name: {{ .AutomationObject }}
+
+          Files:
+          {{ range $filename, $_ := .Updated.Files -}}
+          - {{ $filename }}
+          {{ end -}}
+
+          Objects:
+          {{ range $resource, $_ := .Updated.Objects -}}
+          - {{ $resource.Kind }} {{ $resource.Name }}
+          {{ end -}}
+
+          Images:
+          {{ range .Updated.Images -}}
+          - {{.}}
+          {{ end -}}    
     push:
       branch: fluxcdbot/podinfo2
   interval: 1m0s
