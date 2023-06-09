@@ -4,7 +4,7 @@ name: Flux Image Update Auto-PR
 on:  # yamllint disable-line rule:truthy
   create:
     branches:
-      - fluxcdbot/updates/**
+      - fluxcdbot/**
 
 permissions:
   pull-requests: write
