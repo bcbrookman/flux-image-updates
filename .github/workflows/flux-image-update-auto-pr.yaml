@@ -17,9 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         name: checkout
+        with:
+          fetch-depth: 50
 
       - name: pull-request
         run: |
-          gh pr create --base "main" --fill
+          gh pr create --base "main" --title "" --body ""
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
