@@ -42,20 +42,24 @@ spec:
       messageTemplate: |
         Bump {{ (index .Updated.Images 0).Repository }} to {{ (index .Updated.Images 0).Identifier }}
 
+
         Files:
         {{ range $filename, $_ := .Updated.Files -}}
           - {{ $filename }}
         {{ end -}}
+
 
         Objects:
         {{ range $resource, $_ := .Updated.Objects -}}
           - {{ $resource.Kind }} {{ $resource.Name }}
         {{ end -}}
 
+
         Images:
         {{ range .Updated.Images -}}
           - {{.}}
         {{ end -}}
+
 
         Automation name: {{ .AutomationObject }}
     push:
