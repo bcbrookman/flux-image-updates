@@ -40,7 +40,7 @@ spec:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: |
-        Bump {{range .Updated.Images.}}{{println .Repository}}{{end}}
+        Bump {{ (index .Updated.Images 0).Repository }} to {{ (index .Updated.Images 0).Identifier }}
 
         Files:
         {{ range $filename, $_ := .Updated.Files -}}
