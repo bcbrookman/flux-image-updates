@@ -5,7 +5,7 @@ on:  # yamllint disable-line rule:truthy
   workflow_dispatch:
   create:
     branches:
-      - fluxcdbot/updates/*
+      - 'fluxcdbot/updates/**'
 
 permissions:
   pull-requests: write
