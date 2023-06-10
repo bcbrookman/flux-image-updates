@@ -40,7 +40,7 @@ spec:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: |
-        Bump podinfo2 image version
+        Bump {{range .Updated.Images.}}{{println .Identifier}}{{end}} version
 
         Files:
         {{ range $filename, $_ := .Updated.Files -}}
