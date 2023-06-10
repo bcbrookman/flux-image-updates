@@ -44,22 +44,19 @@ spec:
 
 
         Files:
-
-        {{ range $filename, $_ := .Updated.Files -}}
+          {{ range $filename, $_ := .Updated.Files -}}
           - {{ $filename }}
-        {{ end -}}
+          {{ end -}}
 
         Objects:
-
-        {{ range $resource, $_ := .Updated.Objects -}}
+          {{ range $resource, $_ := .Updated.Objects -}}
           - {{ $resource.Kind }} {{ $resource.Name }}
-        {{ end -}}
+          {{ end -}}
 
         Images:
-
-        {{ range .Updated.Images -}}
-          - {{.}}
-        {{ end -}}
+          {{ range .Updated.Images -}}
+           - {{.}}
+          {{ end -}}
 
         Automation name: {{ .AutomationObject }}
     push:
