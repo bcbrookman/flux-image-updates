@@ -1,16 +1,14 @@
 ---
 name: Flux Image Update Auto-PR
 
-on:  # yamllint disable-line rule:truthy
-  create:
-    branches:
-      - fluxcdbot/**
+on:  create
 
 permissions:
   pull-requests: write
 
 jobs:
   pull-request:
+    if: ${{ startsWith(github.head_ref, 'fluxcdbot/')
     runs-on: ubuntu-latest
 
     steps:
