@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   pull-request:
-    if: ${{ startsWith($GITHUB_REF, 'fluxcdbot/') }}
+    if: ${{ startsWith(github.ref_name, 'fluxcdbot/') }}
     runs-on: ubuntu-latest
 
     steps:
